@@ -1,2 +1,16 @@
 "use strict";
-console.log('Testing');
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var fs_1 = __importDefault(require("fs"));
+// Will need to split on \n. Then map + split on the , to make a two dimensional array.
+var matches = fs_1.default
+    .readFileSync('football.csv', {
+    encoding: 'utf-8',
+})
+    .split('\n')
+    .map(function (row) {
+    return row.split(',');
+});
+console.log(matches);
