@@ -5,6 +5,8 @@ import { CsvFileReader } from './CsvFileReader';
 const reader = new CsvFileReader('football.csv');
 reader.read();
 
+console.log(reader.data);
+
 // enum - enumeration
 // enum definition
 // Purpose of the enum is to signal to other developers that this is a collection of closely related values.

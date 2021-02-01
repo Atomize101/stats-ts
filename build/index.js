@@ -4,6 +4,7 @@ var CsvFileReader_1 = require("./CsvFileReader");
 // Will need to split on \n. Then map + split on the , to make a two dimensional array.
 var reader = new CsvFileReader_1.CsvFileReader('football.csv');
 reader.read();
+console.log(reader.data);
 // enum - enumeration
 // enum definition
 // Purpose of the enum is to signal to other developers that this is a collection of closely related values.
