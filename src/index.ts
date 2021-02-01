@@ -1,4 +1,5 @@
 import { CsvFileReader } from './CsvFileReader';
+import { MatchResult } from './MatchResult';
 
 // Will need to split on \n. Then map + split on the , to make a two dimensional array.
 
@@ -6,15 +7,6 @@ const reader = new CsvFileReader('football.csv');
 reader.read();
 
 console.log(reader.data);
-
-// enum - enumeration
-// enum definition
-// Purpose of the enum is to signal to other developers that this is a collection of closely related values.
-enum MatchResult {
-	HomeWin = 'H',
-	AwayWin = 'A',
-	Draw = 'D',
-}
 
 let manUnitedWins = 0;
 
