@@ -1,14 +1,21 @@
 import { MatchReader } from './MatchReader';
 import { MatchResult } from './MatchResult';
+import { CsvFileReader } from './CsvFileReader';
 
-// Will need to split on \n. Then map + split on the , to make a two dimensional array.
+// Create an objeect that satisfies the 'DataReader' interface
+const csvFileReader = new CsvFileReader('football.csv');
 
-const reader = new MatchReader('football.csv');
-reader.read();
+// Create an instance of MatchReader and pass in someting satisfying
+// the 'DataReader' interface
+
+const matchReader = new MatchReader(csvFileReader);
+matchReader.load();
+
+//matchReader.matches
 
 let manUnitedWins = 0;
 
-for (let match of reader.data) {
+for (let match of matchReader.matches) {
 	if (match[1] === 'Man United' && match[5] === MatchResult.HomeWin) {
 		manUnitedWins++;
 	} else if (match[2] === 'Man United' && match[5] === MatchResult.AwayWin) {

@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.dateStringToDate = void 0;
 exports.dateStringToDate = function (dateString) {
     // 28/10/2018
-    var dateParts = dateString.split('/') // ['28', '10', '2018'] then after parseInt, dateParts are numbers
+    var dateParts = dateString
+        .split('/') // ['28', '10', '2018'] then after parseInt, dateParts are numbers
         .map(function (value) {
         return parseInt(value);
     });
