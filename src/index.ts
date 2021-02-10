@@ -5,15 +5,10 @@ import { WinsAnalysis } from './analyzers/WinsAnalysis';
 import { Summary } from './Summary';
 import { HtmlReport } from './reportTargets/HtmlReports';
 
-// Create an objeect that satisfies the 'DataReader' interface
-const csvFileReader = new CsvFileReader('football.csv');
-
-// Create an instance of MatchReader and pass in someting satisfying
-// the 'DataReader' interface
-
-const matchReader = new MatchReader(csvFileReader);
+// Refactor
+const matchReader = MatchReader.fromCsv('football.csv');
 matchReader.load();
 
-const summary = new Summary(new WinsAnalysis('Man United'), new HtmlReport());
+const summary = Summary.winsAnalysisWithHtmlReport('Man United');
 
 summary.buildAndPrintReport(matchReader.matches);
